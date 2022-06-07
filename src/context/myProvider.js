@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import MyContext from './myContext';
+import fetchPlanets from './service/FetchAPI';
 
 function Provider({ children }) {
   const INITIAL_STATE = {
@@ -14,6 +15,7 @@ function Provider({ children }) {
   const contextValue = {
     state,
     setState,
+    fetchPlanets,
   };
 
   console.log(contextValue);
