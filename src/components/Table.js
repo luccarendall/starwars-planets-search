@@ -6,7 +6,7 @@ function Table() {
   const [titleFilter, setTitleFilter] = useState('');
   const [filterType, setFilterType] = useState('population');
   const [operator, setOperator] = useState('maior que');
-  const [value, setValue] = useState('0');
+  const [inputValue, setInputValue] = useState(0);
   const [numericFilters, setNumericFilter] = useState([]);
 
   useEffect(() => {
@@ -48,17 +48,25 @@ function Table() {
   };
 
   const handleNumericFilter = () => {
-    const newNumericFilter = {
+    const newNumericFilter = [
       filterType,
       operator,
-      value,
-    };
+      inputValue,
+    ];
     setNumericFilter([...numericFilters, newNumericFilter]);
   };
 
   const handleDeleteFilter = (index) => {
     setNumericFilter(numericFilters.filter((_item, itemIndex) => itemIndex !== index));
   };
+
+  // const filterBtn = () => {
+  //   const filters = [column, operator, value];
+
+  //   setFilterValues([...filterValues, filters]);
+  //   const columnOptionsFilter = columnOptions.filter((filter) => filter !== column);
+  //   setColumnOptions(columnOptionsFilter);
+  // };
 
   return (
     <main>
@@ -88,6 +96,7 @@ function Table() {
           Operador:
           <select
             id="operator"
+            data-testid="comparison-filter"
             onChange={ ({ target }) => setOperator(target.value) }
           >
             <option>maior que</option>
@@ -99,17 +108,22 @@ function Table() {
         <input
           type="number"
           placeholder="0"
-          onChange={ ({ target }) => setValue(target.value) }
+          value={ inputValue }
+          data-testid="value-filter"
+          onChange={ ({ target }) => setInputValue(target.value) }
         />
 
+        {/* BOTÃO DE FILTRAR */}
         <button
           type="button"
+          data-testid="button-filter"
           onClick={ handleNumericFilter }
         >
           Filtrar
         </button>
       </form>
 
+      {/* BOTÃO DE REMOVER FILTRO */}
       {numericFilters.map((filter, index) => (
         <button
           type="button"
