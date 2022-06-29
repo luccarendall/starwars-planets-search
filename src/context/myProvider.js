@@ -24,8 +24,13 @@ function Provider({ children }) {
       const response = await fetch('https://swapi-trybe.herokuapp.com/api/planets/');
       const APIdata = await response.json();
       console.log(APIdata.results);
-      setData(APIdata.results);
-      setFilteredData(APIdata.results);
+      const xablau = APIdata.results;
+      // // Slice pra retornar apenas 8 planetas
+      // const OITO = 8;
+      // const planetSlice = xablau.slice(0, OITO);
+      // console.log(planetSlice);
+      setData(xablau);
+      setFilteredData(xablau);
     };
     fetchPlanets();
   }, []);
@@ -33,24 +38,27 @@ function Provider({ children }) {
   // O useEffect aq vai executar uma função (primeiro parâmetro(antes da virgula)) sempre que algo mudar. Nesse caso o que vai mudar é o titleFilter que recebe o valor que a gente coloca no input
   useEffect(() => {
     const filteredPlanets = data.filter(
-      (planets) => planets.name.toLowerCase().includes(titleFilter),
+      (planets) => planets.name.toLowerCase()
+        .includes(titleFilter),
     );
 
     // aqui vamos percorrer o acumulador, que inicialmente pega o filteredPlanets, e vamos acumular os filtros numericos usados.
-    setFilteredData(numericFilters.reduce(
+    const setFilters = numericFilters.reduce(
       (acumulador, filter) => acumulador.filter((planets) => {
-        switch (filter.operator) {
+        // Glórias meu deus, 3 dias tentando fazer isso funcionar!!!
+        switch (filter[1]) {
         case 'maior que':
-          return planets[filter.filterType] > Number(filter.value);
+          return planets[filter[0]] > Number(filter[2]);
         case 'menor que':
-          return planets[filter.filterType] < Number(filter.value);
+          return planets[filter[0]] < Number(filter[2]);
         case 'igual a':
-          return planets[filter.filterType] === Number(filter.value);
+          return planets[filter[0]] === filter[2];
         default:
-          return true;
+          return planets;
         }
       }), filteredPlanets,
-    ));
+    );
+    setFilteredData(setFilters);
   }, [titleFilter, numericFilters, data]);
 
   const handleTitleFilter = ({ target }) => {
