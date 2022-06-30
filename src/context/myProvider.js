@@ -74,7 +74,7 @@ function Provider({ children }) {
     const selectedFilter = filterOptions.filter((filter) => filter !== filterType);
     setFilterOptions(selectedFilter);
 
-    console.log('handleNumericFilter funcionou');
+    console.log('handleNumericFilter funcionou', selectedFilter, newNumericFilter);
   };
 
   // apenas pega o valor

@@ -7,6 +7,7 @@ function Table() {
     filteredData,
     inputValue,
     numericFilters,
+    filterOptions,
     handleTitleFilter,
     handleNumericFilter,
     handleDeleteFilter,
@@ -27,18 +28,31 @@ function Table() {
         />
         <label htmlFor="filter">
           Filtrar por:
+          {/* {filteredData.map((planets) => ( */}
           <select
+            // key={ planets.name }
             id="filter"
             data-testid="column-filter"
             onChange={ handlerFilter }
           >
-            {/* renderizar usando filterOptions */}
-            <option>population</option>
-            <option>orbital_period</option>
-            <option>diameter</option>
-            <option>rotation_period</option>
-            <option>surface_water</option>
+            {/* <option>{filterOptions[0]}</option>
+            <option>{filterOptions[1]}</option>
+            <option>{filterOptions[2]}</option>
+            <option>{filterOptions[3]}</option>
+            <option>{filterOptions[4]}</option> */}
+            {filterOptions.map((filter, index) => (
+              <option
+                key={ index }
+              >
+                { filter }
+              </option>
+            ))}
+            {/* <option>{planets.orbital_period}</option>
+            <option>{planets.diameter}</option>
+            <option>{planets.rotation_period}</option>
+            <option>{planets.surface_water}</option> */}
           </select>
+          {/* ))} */}
         </label>
 
         <label htmlFor="operator">
