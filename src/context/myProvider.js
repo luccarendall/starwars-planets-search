@@ -25,7 +25,7 @@ function Provider({ children }) {
       const APIdata = await response.json();
       console.log(APIdata.results);
       const xablau = APIdata.results;
-      // // Slice pra retornar apenas 8 planetas
+      // // Slice pra retornar apenas 8 planetas (se mostrou desnecessário depois)
       // const OITO = 8;
       // const planetSlice = xablau.slice(0, OITO);
       // console.log(planetSlice);
@@ -61,6 +61,7 @@ function Provider({ children }) {
     setFilteredData(setFilters);
   }, [titleFilter, numericFilters, data]);
 
+  // filtro contínuo de título
   const handleTitleFilter = ({ target }) => {
     setTitleFilter(target.value.toLowerCase());
   // console.log('handleTitleFilter funcionou');
@@ -76,20 +77,29 @@ function Provider({ children }) {
     console.log('handleNumericFilter funcionou');
   };
 
+  // apenas pega o valor
+  const handlerFilter = ({ target }) => {
+    setFilterType(target.value);
+  };
+
   // Botão de deletar filtros
   const handleDeleteFilter = (index) => {
     setNumericFilter(numericFilters.filter((_item, itemIndex) => itemIndex !== index));
   // console.log('handleDeleteFilter funcionou');
   };
 
-  const handlerFilter = ({ target }) => {
-    setFilterType(target.value);
+  // Literalmente remove todos os filtros (seta o array como vazio)
+  const handleDeleteAllFilters = () => {
+    setNumericFilter([]);
+    // console.log('handleDeleteAllFilters funcionou');
   };
 
+  // apenas pega o valor
   const handlerOperator = ({ target }) => {
     setOperator(target.value);
   };
 
+  // apenas pega o valor
   const handlerNumberInput = ({ target }) => {
     setInputValue(target.value);
   };
@@ -106,6 +116,7 @@ function Provider({ children }) {
     handleTitleFilter,
     handleNumericFilter,
     handleDeleteFilter,
+    handleDeleteAllFilters,
     handlerFilter,
     handlerOperator,
     handlerNumberInput,

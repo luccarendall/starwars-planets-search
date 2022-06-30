@@ -10,6 +10,7 @@ function Table() {
     handleTitleFilter,
     handleNumericFilter,
     handleDeleteFilter,
+    handleDeleteAllFilters,
     handlerFilter,
     handlerOperator,
     handlerNumberInput,
@@ -31,6 +32,7 @@ function Table() {
             data-testid="column-filter"
             onChange={ handlerFilter }
           >
+            {/* renderizar usando filterOptions */}
             <option>population</option>
             <option>orbital_period</option>
             <option>diameter</option>
@@ -74,12 +76,20 @@ function Table() {
       {numericFilters.map((filter, index) => (
         <button
           type="button"
-          data-testid="button-remove-filters"
           key={ `${filter.filter.type}-${index}` }
           onClick={ () => handleDeleteFilter(index) }
         >
           {`${filter.filterType} ${filter.operator} ${filter.value}`}
         </button>))}
+
+      {/* BOTÃO DE REMOVER TODOS OS FILTROS */}
+      <button
+        type="button"
+        data-testid="button-remove-filters"
+        onClick={ () => handleDeleteAllFilters() }
+      >
+        Remover filtros
+      </button>
 
       <table border="1">
         <thead>
