@@ -15,7 +15,11 @@ function Table() {
     handlerFilter,
     handlerOperator,
     handlerNumberInput,
+    pesquisa,
   } = context;
+
+  // Usado no botão de remover cada filtro. Novamente só aproveitei o que já funcionava e realoquei. Dessa vez peguei a informação a partir de um console.log na função do botão de filtrar
+  const filtroUsado = pesquisa;
 
   return (
     <main>
@@ -40,6 +44,8 @@ function Table() {
             <option>{filterOptions[2]}</option>
             <option>{filterOptions[3]}</option>
             <option>{filterOptions[4]}</option> */}
+
+            {/* Não sei se era pra fazer assim, mas como filterOptions já tava funcionando no estado (retirando o filtro selecionado) só troquei e renderizei ele na tela usando o map. Funcionou... */}
             {filterOptions.map((filter, index) => (
               <option
                 key={ index }
@@ -84,17 +90,33 @@ function Table() {
         >
           Filtrar
         </button>
-      </form>
 
-      {/* BOTÃO DE REMOVER FILTRO */}
-      {numericFilters.map((filter, index) => (
-        <button
-          type="button"
-          key={ `${filter.filter.type}-${index}` }
-          onClick={ () => handleDeleteFilter(index) }
-        >
-          {`${filter.filterType} ${filter.operator} ${filter.value}`}
-        </button>))}
+        {/* BOTÃO DE REMOVER FILTRO */}
+        {numericFilters.map((filter, index) => (
+          //    <button
+          //    type="button"
+          //    data-testid="filter"
+          //    key={ `${filter.filter.type}-${index}` }
+          //    onClick={ () => handleDeleteFilter(index) }
+          //  >
+          <div key={ index }>
+            <span
+              data-testid="filter"
+            >
+              {
+                `${filtroUsado[0]} 
+                 ${filtroUsado[1]} 
+                 ${filtroUsado[2]}`
+              }
+              <button
+                type="button"
+                onClick={ () => handleDeleteFilter(index) && console.log(filter) }
+              >
+                X
+              </button>
+            </span>
+          </div>))}
+      </form>
 
       {/* BOTÃO DE REMOVER TODOS OS FILTROS */}
       <button

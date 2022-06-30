@@ -17,6 +17,7 @@ function Provider({ children }) {
     'rotation_period',
     'surface_water',
   ]);
+  const [pesquisa, setPesquisa] = useState([]); // minha vó escolheu o nome desse estado kk ela tava olhando e quis fazer ela participar
 
   // Fetch da API, pegando a chave results
   useEffect(() => {
@@ -71,10 +72,11 @@ function Provider({ children }) {
   const handleNumericFilter = () => {
     const newNumericFilter = [filterType, operator, inputValue];
     setNumericFilter([...numericFilters, newNumericFilter]);
-    const selectedFilter = filterOptions.filter((filter) => filter !== filterType);
-    setFilterOptions(selectedFilter);
+    const filtersArray = filterOptions.filter((filter) => filter !== filterType);
+    setFilterOptions(filtersArray);
+    setPesquisa(newNumericFilter);
 
-    console.log('handleNumericFilter funcionou', selectedFilter, newNumericFilter);
+    console.log('handleNumericFilter funcionou', newNumericFilter);
   };
 
   // apenas pega o valor
@@ -113,6 +115,7 @@ function Provider({ children }) {
     inputValue,
     numericFilters,
     filterOptions,
+    pesquisa,
     handleTitleFilter,
     handleNumericFilter,
     handleDeleteFilter,
