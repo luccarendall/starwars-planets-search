@@ -16,6 +16,9 @@ function Table() {
     handlerOperator,
     handlerNumberInput,
     pesquisa,
+    setOrderFilters,
+    handleOrderBtn,
+    orderSortOnclick,
   } = context;
 
   // Usado no botão de remover cada filtro. Novamente só aproveitei o que já funcionava e realoquei. Dessa vez peguei a informação a partir de um console.log na função do botão de filtrar
@@ -127,6 +130,54 @@ function Table() {
         Remover filtros
       </button>
 
+      <form>
+        <label htmlFor="filterColumns">
+          Sort
+          <select
+            data-testid="column-sort"
+            name="filterColumns"
+            id="filterColumns"
+            onChange={ ({ target }) => setOrderFilters(target.value) }
+          >
+            {/* mesmo map do "Filtrar por:" - linha 52, mudei o nome do filter pra conseguir usar dnv */}
+            {filterOptions.map((newFilter, index) => (
+              <option
+                key={ index }
+              >
+                { newFilter }
+              </option>
+            ))}
+          </select>
+        </label>
+        <label htmlFor="ordem-crescente">
+          Crescente
+          <input
+            data-testid="column-sort-input-asc"
+            id="ordem-crescente"
+            type="checkbox"
+            value="ASC"
+            onClick={ orderSortOnclick }
+          />
+        </label>
+        <label htmlFor="ordem-descrescente">
+          Decrescente
+          <input
+            data-testid="column-sort-input-desc"
+            id="ordem-descrescente"
+            type="checkbox"
+            value="DESC"
+            onClick={ orderSortOnclick }
+          />
+        </label>
+        <button
+          data-testid="column-sort-button"
+          type="button"
+          onClick={ handleOrderBtn }
+        >
+          Sort
+        </button>
+      </form>
+
       <table border="1">
         <thead>
           <tr>
@@ -150,7 +201,7 @@ function Table() {
           {/* Lembrete: Se algum dos resultados fosse um array de objetos, usaria: {planets.films.map(films => name)} dentro do td, para com que cada objeto mostrasse apenas o nome do filme por exemplo */}
           {filteredData.map((planets) => (
             <tr key={ planets.name }>
-              <td>{planets.name}</td>
+              <td data-testid="planet-name">{planets.name}</td>
               <td>{planets.rotation_period}</td>
               <td>{planets.orbital_period}</td>
               <td>{planets.diameter}</td>

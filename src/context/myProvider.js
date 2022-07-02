@@ -18,20 +18,27 @@ function Provider({ children }) {
     'surface_water',
   ]);
   const [pesquisa, setPesquisa] = useState([]); // minha vó escolheu o nome desse estado kk ela tava olhando e quis fazer ela participar
+  const [orderFilters, setOrderFilters] = useState('rotation_period');
+  const [orderSort, setOrderSort] = useState('ASC');
+
+  const [order, setOrder] = useState({
+    column: 'population',
+    sort: 'ASC',
+  });
 
   // Fetch da API, pegando a chave results
   useEffect(() => {
     const fetchPlanets = async () => {
       const response = await fetch('https://swapi-trybe.herokuapp.com/api/planets/');
       const APIdata = await response.json();
-      console.log(APIdata.results);
+      // console.log(APIdata.results);
       const xablau = APIdata.results;
-      // // Slice pra retornar apenas 8 planetas (se mostrou desnecessário depois)
-      // const OITO = 8;
-      // const planetSlice = xablau.slice(0, OITO);
-      // console.log(planetSlice);
-      setData(xablau);
-      setFilteredData(xablau);
+      const planetsInOrder = xablau.sort(
+        (a, b) => a.name.localeCompare(b.name),
+      );
+      console.log(planetsInOrder);
+      setData(planetsInOrder);
+      setFilteredData(planetsInOrder);
     };
     fetchPlanets();
   }, []);
@@ -106,6 +113,53 @@ function Provider({ children }) {
     setInputValue(target.value);
   };
 
+  // Filtro para pegar os campos sem dados e ordenador (sort) para deixar o retorno em ordem crescente ou decrescente. No final tem uma gambiarra monstra pra inicialmente mostrar em ordem alfabetica. A função de ordenar tava quebrando o sort de deixar em ordem alfabetica. Melhorar isso depois
+  // https://stackoverflow.com/questions/51286573/how-to-change-sorting-order-when-sorting-mixed-items-with-string-localecompare
+  // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare
+  useEffect(() => {
+    const recoveryInfo = [...data];
+
+    const numericInfo = recoveryInfo.filter(
+      (planet) => planet[order.column] !== 'unknown',
+    );
+    const unknownValues = recoveryInfo.filter(
+      (planet) => planet[order.column] === 'unknown',
+    );
+    switch (order.sort) {
+    case 'ASC':
+      numericInfo.sort(
+        (a, b) => a[order.column] - b[order.column],
+      );
+      break;
+    case 'DESC':
+      numericInfo.sort(
+        (a, b) => b[order.column] - a[order.column],
+      );
+      break;
+    default:
+      return true;
+    }
+
+    const orderedPlanets = [...numericInfo, ...unknownValues];
+    if (orderFilters === 'rotation_period') {
+      setFilteredData(orderedPlanets.sort((a, b) => a.name.localeCompare(b.name)));
+    } else {
+      setFilteredData(orderedPlanets);
+    }
+  }, [data, order.column, order.sort, orderFilters]);
+
+  const orderSortOnclick = ({ target }) => {
+    setOrderSort(target.value);
+  };
+
+  const handleOrderBtn = () => {
+    const newOrder = {
+      column: orderFilters,
+      sort: orderSort,
+    };
+    setOrder(newOrder);
+  };
+
   const contextValue = {
     data,
     filteredData,
@@ -123,6 +177,9 @@ function Provider({ children }) {
     handlerFilter,
     handlerOperator,
     handlerNumberInput,
+    setOrderFilters,
+    handleOrderBtn,
+    orderSortOnclick,
   };
 
   return (
