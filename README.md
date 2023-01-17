@@ -1,13 +1,28 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+## [Star Wars Planet Search](https://swapi-trybe.herokuapp.com/api/planets/)
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+O objetivo do projeto foi desenvolver uma lista com filtros de planetas do universo de Star Wars usando **Context API e Hooks** para controlar os estados globais.
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+Acesse a aplicação pelo link:
+> inserir link após deploy
+
+## Bibliotecas / API
+* React
+	 * React Router
+	 * React Hooks
+	 * React Context API
+* Usamos o método `fetch` para chamar a API.
+* A API utilizada no projeto foi:    
+[Swapi Planets API](https://swapi-trybe.herokuapp.com/api/planets/)
+
+> ## Desmontração de Uso
+
+## Executar localmente
+1) Clonar o repositório
+2) Instalar dependências com `npm install`
+3) Entre na pasta do projeto e execute `npm start`
+4) Pronto, projeto rodando em: `http://localhost:3000/`
+
+## Autor
+| [<img src="https://avatars.githubusercontent.com/u/92706411?v=4" width=115><br><sub>@luccarendall</sub>](https://github.com/LuccaRendall) |
+| :---: |
+
