@@ -1,9 +1,9 @@
-## [Star Wars Planet Search](https://swapi-trybe.herokuapp.com/api/planets/)
+## [Star Wars Planet Search](https://luccarendall.github.io/buscador-de-planetas-StarWars/)
 
 O objetivo do projeto foi desenvolver uma lista com filtros de planetas do universo de Star Wars usando **Context API e Hooks** para controlar os estados globais.
 
 Acesse a aplicação pelo link:
-> inserir link após deploy
+> https://bit.ly/3krzPVK
 
 ## Bibliotecas / API
 * React
