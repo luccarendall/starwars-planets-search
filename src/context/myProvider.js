@@ -27,21 +27,21 @@ function Provider({ children }) {
   });
 
   // Fetch da API, pegando a chave results
-  useEffect(() => {
-    const fetchPlanets = async () => {
-      const response = await fetch('https://swapi-trybe.herokuapp.com/api/planets/');
-      const APIdata = await response.json();
-      // console.log(APIdata.results);
-      const xablau = APIdata.results;
-      const planetsInOrder = xablau.sort(
-        (a, b) => a.name.localeCompare(b.name),
-      );
-      console.log(planetsInOrder);
-      setData(planetsInOrder);
-      setFilteredData(planetsInOrder);
-    };
-    fetchPlanets();
-  }, []);
+  // useEffect(() => {
+  //   const fetchPlanets = async () => {
+  //     const response = await fetch('https://swapi-trybe.herokuapp.com/api/planets/');
+  //     const APIdata = await response.json();
+  //     // console.log(APIdata.results);
+  //     const xablau = APIdata.results;
+  //     const planetsInOrder = xablau.sort(
+  //       (a, b) => a.name.localeCompare(b.name),
+  //     );
+  //     console.log(planetsInOrder);
+  //     setData(planetsInOrder);
+  //     setFilteredData(planetsInOrder);
+  //   };
+  //   fetchPlanets();
+  // }, []);
 
   // O useEffect aq vai executar uma função (primeiro parâmetro(antes da virgula)) sempre que algo mudar. Nesse caso o que vai mudar é o titleFilter que recebe o valor que a gente coloca no input
   useEffect(() => {
