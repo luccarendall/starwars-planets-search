@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import MyContext from './myContext';
+import getPlanets from '../hooks/getPlanets';
 
 function Provider({ children }) {
   const [data, setData] = useState([]);
@@ -27,6 +28,7 @@ function Provider({ children }) {
   });
 
   // Fetch da API, pegando a chave results
+
   // useEffect(() => {
   //   const fetchPlanets = async () => {
   //     const response = await fetch('https://swapi-trybe.herokuapp.com/api/planets/');
@@ -42,6 +44,9 @@ function Provider({ children }) {
   //   };
   //   fetchPlanets();
   // }, []);
+
+  // Puxa os dados da API mockada e seta no estado de dados
+  getPlanets(setData);
 
   // O useEffect aq vai executar uma função (primeiro parâmetro(antes da virgula)) sempre que algo mudar. Nesse caso o que vai mudar é o titleFilter que recebe o valor que a gente coloca no input
   useEffect(() => {
