@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/buscador-de-planetas-StarWars/static/css/main.abd64e84.css",
+    "main.js": "/buscador-de-planetas-StarWars/static/js/main.bf7b05cf.js",
+    "index.html": "/buscador-de-planetas-StarWars/index.html",
+    "main.abd64e84.css.map": "/buscador-de-planetas-StarWars/static/css/main.abd64e84.css.map",
+    "main.bf7b05cf.js.map": "/buscador-de-planetas-StarWars/static/js/main.bf7b05cf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.abd64e84.css",
+    "static/js/main.bf7b05cf.js"
+  ]
+}
