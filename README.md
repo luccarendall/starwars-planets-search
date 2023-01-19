@@ -10,7 +10,7 @@ Acesse a aplicação pelo link:
 	 * React Router
 	 * React Hooks
 	 * React Context API
-* Usamos o método `fetch` para chamar a API.
+* Usei o método `fetch` para chamar a API.
 * A API utilizada no projeto foi:    
 [Swapi Planets API](https://swapi-trybe.herokuapp.com/api/planets/)
 
