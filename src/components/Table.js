@@ -10,7 +10,7 @@ function Table() {
 
   return (
     <main>
-      <table border="1" id="table">
+      <table id="table">
         <thead>
           <tr>
             <th>Name</th>
@@ -23,8 +23,6 @@ function Table() {
             <th>Surface Water</th>
             <th>Population</th>
             <th>Films</th>
-            <th>Created</th>
-            <th>Edited</th>
             <th>URL</th>
           </tr>
         </thead>
@@ -43,8 +41,6 @@ function Table() {
               <td>{planets.surface_water}</td>
               <td>{planets.population}</td>
               <td>{planets.films}</td>
-              <td>{planets.created}</td>
-              <td>{planets.edited}</td>
               <td>{planets.url}</td>
             </tr>
           ))}

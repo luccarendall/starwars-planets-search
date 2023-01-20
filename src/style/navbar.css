@@ -1,0 +1,139 @@
+/* stylelint-disable */
+
+nav {
+  background: var(--transparent-div-bg);
+  box-shadow: 0 8px 32px 0 var(--transparent-div-box-shadow);
+  backdrop-filter: blur( 2.5px );
+  -webkit-backdrop-filter: blur( 2.5px );
+  border-radius: 10px;
+  border: 1px solid var(--transparent-div-border);
+  page-break-inside: auto;
+  font-size: 0.8em;
+  border: 0px;
+  margin: 0px auto;
+  width: 75rem;
+  color: #141414;
+}
+
+.form {
+  background: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+#div1 {
+/* background-color: aqua; */
+justify-content: space-around;
+flex-direction: row;
+align-items: baseline;
+font-size: 1em;
+font-weight: bold;
+font-family: var(--font);
+padding: 5px;
+padding-top: 10px;
+vertical-align: baseline;
+
+}
+
+#div2 {
+/* background-color: yellowgreen; */
+padding: 2px;
+}
+
+#div3 {
+/* background-color: blue; */
+font-size: 1em;
+font-weight: bold;
+font-family: var(--font);
+padding: 5px;
+padding-bottom: 5px;
+}
+
+#div3 label {
+    padding: 5px;
+}
+
+
+.buttons {
+    border: 0.5px solid var(--orange);
+    border-radius: 3.5px;
+    color: var(--black);  
+    box-shadow: 0 0 40px 40px var(--orange) inset, 0 0 0 0 var(--orange);
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+    font-weight: bold;
+    font-family: var(--font);
+  }
+
+.buttons:hover {
+  color: var(--white);
+  background-color: var(--black);
+}
+  
+.removeAllFilters {
+    font-family: var(--font);
+    margin: 10px;
+    font-size: large;
+    border: 0.5px solid var(--black);
+    color: var(--orange);  
+    font-weight: bold;
+    box-shadow: 0 0 40px 40px var(--black) inset, 0 0 0 0 var(--black);
+    border-radius: 3.5px;
+}
+
+.removeAllFilters:hover {
+  color: var(--white);
+}
+
+.input {
+    border: 0;
+    border-bottom: 2px solid var(--black);  
+    color: var(--black);  
+    background: transparent;
+    font-size: bold;
+    font-family: var(--font);
+}
+
+.input:focus {
+  box-shadow: 0 0 0 0;
+  outline: 0;
+}
+
+/* Remover setas do input number */
+/* https://pt.stackoverflow.com/questions/177573/retirar-as-setas-no-campo-tipo-number */
+input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+.AppliedFiltersDiv {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-20%);
+  color:var(--black);
+  font-weight: bold;
+  font-size: 1em;
+  /* background: salmon; */
+}
+
+.AppliedFilters {
+  background: var(--white);
+  border-radius: 3.5px;
+  padding: 4px;
+  margin: 0px 5px 0px 4px;
+}
+
+.removeFilterButton{
+  margin-left: 5px;
+  font-size: 10px;
+  background-color: var(--black);
+  color: var(--white);
+  border-radius: 3.5px;
+  margin: 4px;
+}

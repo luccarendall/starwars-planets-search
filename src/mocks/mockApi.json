@@ -26,11 +26,11 @@
           "https://swapi-trybe.herokuapp.com/api/people/62/"
         ],
         "films": [
-          "https://swapi-trybe.herokuapp.com/api/films/1/",
-          "https://swapi-trybe.herokuapp.com/api/films/3/",
-          "https://swapi-trybe.herokuapp.com/api/films/4/",
-          "https://swapi-trybe.herokuapp.com/api/films/5/",
-          "https://swapi-trybe.herokuapp.com/api/films/6/"
+          "Episode I – The Phantom Menace",
+          "Episode III – Revenge of the Sith",
+          "Episode IV – A New Hope",
+          "Episode V – The Empire Strikes Back",
+          "Episode VI – Return of the Jedi"
         ],
         "created": "2014-12-09T13:50:49.641000Z",
         "edited": "2014-12-20T20:58:18.411000Z",
@@ -52,8 +52,8 @@
           "https://swapi-trybe.herokuapp.com/api/people/81/"
         ],
         "films": [
-          "https://swapi-trybe.herokuapp.com/api/films/1/",
-          "https://swapi-trybe.herokuapp.com/api/films/6/"
+          "Episode I – The Phantom Menace",
+          "Episode VI – Return of the Jedi"
         ],
         "created": "2014-12-10T11:35:48.479000Z",
         "edited": "2014-12-20T20:58:18.420000Z",
@@ -73,7 +73,7 @@
           
         ],
         "films": [
-          "https://swapi-trybe.herokuapp.com/api/films/1/"
+          "Episode I – The Phantom Menace"
         ],
         "created": "2014-12-10T11:37:19.144000Z",
         "edited": "2014-12-20T20:58:18.421000Z",
@@ -93,7 +93,7 @@
           
         ],
         "films": [
-          "https://swapi-trybe.herokuapp.com/api/films/2/"
+          "Episode II – Attack of the Clones"
         ],
         "created": "2014-12-10T11:39:13.934000Z",
         "edited": "2014-12-20T20:58:18.423000Z",
@@ -113,9 +113,9 @@
           
         ],
         "films": [
-          "https://swapi-trybe.herokuapp.com/api/films/2/",
-          "https://swapi-trybe.herokuapp.com/api/films/3/",
-          "https://swapi-trybe.herokuapp.com/api/films/6/"
+          "Episode II – Attack of the Clones",
+          "Episode III – Revenge of the Sith",
+          "Episode VI – Return of the Jedi"
         ],
         "created": "2014-12-10T11:42:22.590000Z",
         "edited": "2014-12-20T20:58:18.425000Z",
@@ -135,7 +135,7 @@
           "https://swapi-trybe.herokuapp.com/api/people/26/"
         ],
         "films": [
-          "https://swapi-trybe.herokuapp.com/api/films/2/"
+          "Episode II – Attack of the Clones"
         ],
         "created": "2014-12-10T11:43:55.240000Z",
         "edited": "2014-12-20T20:58:18.427000Z",
@@ -155,7 +155,7 @@
           "https://swapi-trybe.herokuapp.com/api/people/30/"
         ],
         "films": [
-          "https://swapi-trybe.herokuapp.com/api/films/3/"
+          "Episode III – Revenge of the Sith"
         ],
         "created": "2014-12-10T11:50:29.349000Z",
         "edited": "2014-12-20T20:58:18.429000Z",
@@ -185,10 +185,10 @@
           "https://swapi-trybe.herokuapp.com/api/people/66/"
         ],
         "films": [
-          "https://swapi-trybe.herokuapp.com/api/films/3/",
-          "https://swapi-trybe.herokuapp.com/api/films/4/",
-          "https://swapi-trybe.herokuapp.com/api/films/5/",
-          "https://swapi-trybe.herokuapp.com/api/films/6/"
+          "Episode III – Revenge of the Sith",
+          "Episode IV – A New Hope",
+          "Episode V – The Empire Strikes Back",
+          "Episode VI – Return of the Jedi"
         ],
         "created": "2014-12-10T11:52:31.066000Z",
         "edited": "2014-12-20T20:58:18.430000Z",
@@ -210,10 +210,10 @@
           "https://swapi-trybe.herokuapp.com/api/people/74/"
         ],
         "films": [
-          "https://swapi-trybe.herokuapp.com/api/films/3/",
-          "https://swapi-trybe.herokuapp.com/api/films/4/",
-          "https://swapi-trybe.herokuapp.com/api/films/5/",
-          "https://swapi-trybe.herokuapp.com/api/films/6/"
+          "Episode III – Revenge of the Sith",
+          "Episode IV – A New Hope",
+          "Episode V – The Empire Strikes Back",
+          "Episode VI – Return of the Jedi"
         ],
         "created": "2014-12-10T11:54:13.921000Z",
         "edited": "2014-12-20T20:58:18.432000Z",
@@ -235,7 +235,7 @@
           "https://swapi-trybe.herokuapp.com/api/people/73/"
         ],
         "films": [
-          "https://swapi-trybe.herokuapp.com/api/films/5/"
+          "Episode V – The Empire Strikes Back"
         ],
         "created": "2014-12-10T12:45:06.577000Z",
         "edited": "2014-12-20T20:58:18.434000Z",

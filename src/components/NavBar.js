@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import myContext from '../context/myContext';
-import '../style/table.css';
+import '../style/navbar.css';
 
 function Navbar() {
   const context = useContext(myContext);
@@ -37,20 +37,12 @@ function Navbar() {
         <label htmlFor="filter">
           Filtrar por:
           {' '}
-          {''}
-          {/* {filteredData.map((planets) => ( */}
           <select
-            // key={ planets.name }
             id="filter"
             data-testid="column-filter"
             onChange={ handlerFilter }
             className="buttons"
           >
-            {/* <option>{filterOptions[0]}</option>
-            <option>{filterOptions[1]}</option>
-            <option>{filterOptions[2]}</option>
-            <option>{filterOptions[3]}</option>
-            <option>{filterOptions[4]}</option> */}
 
             {filterOptions.map((filter, index) => (
               <option
@@ -59,18 +51,12 @@ function Navbar() {
                 { filter }
               </option>
             ))}
-            {/* <option>{planets.orbital_period}</option>
-            <option>{planets.diameter}</option>
-            <option>{planets.rotation_period}</option>
-            <option>{planets.surface_water}</option> */}
           </select>
-          {/* ))} */}
         </label>
 
         <label htmlFor="operator">
           Escolha:
           {' '}
-          {''}
           <select
             className="buttons"
             id="operator"
@@ -99,20 +85,20 @@ function Navbar() {
           onClick={ handleNumericFilter }
           className="buttons"
         >
-          Filtrar
+          Filter
         </button>
+      </form>
+
+      <div className="AppliedFiltersDiv">
         {/* BOTÃO DE REMOVER FILTRO */}
         {numericFilters.map((filter, index) => (
-          //    <button
-          //    type="button"
-          //    data-testid="filter"
-          //    key={ `${filter.filter.type}-${index}` }
-          //    onClick={ () => handleDeleteFilter(index) }
-          //  >
           <div key={ index }>
+            <br />
+            <br />
+
             <span
               data-testid="filter"
-              className="span"
+              className="AppliedFilters"
             >
               {
                 `${filtroUsado[0]} 
@@ -122,12 +108,13 @@ function Navbar() {
               <button
                 type="button"
                 onClick={ () => handleDeleteFilter(index) && console.log(filter) }
+                className="removeFilterButton"
               >
-                X
+                ✖
               </button>
             </span>
           </div>))}
-      </form>
+      </div>
 
       <div className="form" id="div2">
         {/* BOTÃO DE REMOVER TODOS OS FILTROS */}
@@ -137,13 +124,13 @@ function Navbar() {
           data-testid="button-remove-filters"
           onClick={ () => handleDeleteAllFilters() }
         >
-          Remover filtros
+          Remove filters
         </button>
       </div>
 
       <form className="form" id="div3">
         <label htmlFor="filterColumns">
-          Ordenar por:
+          Order by:
           {' '}
           {''}
           <select
@@ -164,9 +151,8 @@ function Navbar() {
           </select>
         </label>
         <label htmlFor="ordem-crescente">
-          Crescente
+          Ascending
           {' '}
-          {''}
           <input
             data-testid="column-sort-input-asc"
             id="ordem-crescente"
@@ -176,9 +162,8 @@ function Navbar() {
           />
         </label>
         <label htmlFor="ordem-descrescente">
-          Decrescente
+          Descending
           {' '}
-          {''}
           <input
             data-testid="column-sort-input-desc"
             className="checkbox-wrapper-24"
@@ -194,7 +179,7 @@ function Navbar() {
           onClick={ handleOrderBtn }
           className="buttons"
         >
-          Aplicar
+          Sort
         </button>
       </form>
     </nav>
