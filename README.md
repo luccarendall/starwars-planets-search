@@ -1,9 +1,9 @@
-## [Star Wars Planet Search](https://luccarendall.github.io/buscador-de-planetas-StarWars/)
+## [Star Wars Planet Search](https://luccarendall.github.io/starwars-planets-search/)
 
 O objetivo do projeto foi desenvolver uma lista com filtros de planetas do universo de Star Wars usando **Context API e Hooks** para controlar os estados globais.
 
 Acesse a aplicação pelo link:
-> https://bit.ly/3krzPVK
+> https://luccarendall.github.io/starwars-planets-search/
 
 ## Bibliotecas / API
 * React
