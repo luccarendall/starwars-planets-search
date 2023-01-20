@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/buscador-de-planetas-StarWars/static/css/main.abd64e84.css",
-    "main.js": "/buscador-de-planetas-StarWars/static/js/main.bf7b05cf.js",
-    "index.html": "/buscador-de-planetas-StarWars/index.html",
-    "main.abd64e84.css.map": "/buscador-de-planetas-StarWars/static/css/main.abd64e84.css.map",
-    "main.bf7b05cf.js.map": "/buscador-de-planetas-StarWars/static/js/main.bf7b05cf.js.map"
+    "main.css": "/starwars-planets-search/static/css/main.a0843340.css",
+    "main.js": "/starwars-planets-search/static/js/main.548bcecc.js",
+    "static/media/bg3.png": "/starwars-planets-search/static/media/bg3.70c6e0f109d5b30d9b23.png",
+    "index.html": "/starwars-planets-search/index.html",
+    "main.a0843340.css.map": "/starwars-planets-search/static/css/main.a0843340.css.map",
+    "main.548bcecc.js.map": "/starwars-planets-search/static/js/main.548bcecc.js.map"
   },
   "entrypoints": [
-    "static/css/main.abd64e84.css",
-    "static/js/main.bf7b05cf.js"
+    "static/css/main.a0843340.css",
+    "static/js/main.548bcecc.js"
   ]
 }
