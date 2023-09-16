@@ -1,44 +1,42 @@
 ## [Star Wars Planet Search](https://luccarendall.github.io/starwars-planets-search/)
-O objetivo do projeto foi desenvolver uma lista com filtros de planetas do universo de Star Wars usando Context API e Hooks para controlar os estados globais. 
+The project's objective was to develop a list of Star Wars universe planets with filters using Context API and Hooks to manage global states.
 
 <div align="center">
 <img src="https://i.ibb.co/92Ww8K5/Star-Wars-Planet-Search.png" alt="starwars-tatooine">  
 </div>
 
-O desenvolvimento do projeto se deu a partir de 5 funcionalidades principais:
+The project's development included the following five main functionalities:
 
-**1** - Criar uma requisição para o endpoint /planets da API de Star Wars e preencher uma tabela com os dados retornados, com exceção dos da coluna residents.  
+**1** - Create a request to the /planets endpoint of the Star Wars API and populate a table with the returned data, except for the residents' column.
 
-**2** - Filtrar a tabela através de um texto, inserido num campo de texto, exibindo somente os planetas cujos nomes incluem o texto digitado.
+**2** - Filter the table using a text input field, displaying only the planets whose names include the entered text.
 
-**3** - Criar um filtro de comparação para valores numéricos (maior que, menor que ou igual a).  
+**3** - Create a comparison filter for numeric values (greater than, less than, or equal to).
 
-**4** - Criar um botão X, em cada filtro gerado, que ao ser clicado apaga o filtro de valores numéricos e desfaz as filtragens dos dados da tabela.  
+**4** - Create an 'X' button next to each generated filter, which, when clicked, removes the numeric value filter and undoes the table filtering.
 
-**5** - Tornar possível a ordenação das colunas de forma ascendente ou descendente.
+**5** - Enable column sorting in ascending or descending order.
 
-
-Acesse a aplicação pelo link:
+Access the application via the link:
 > https://luccarendall.github.io/starwars-planets-search/
 
-## Bibliotecas / API
+## Libraries / API
 * React
 	 * React Router
 	 * React Hooks
 	 * React Context API
-* Usei o método `fetch` para chamar a API.
-* A API utilizada no projeto foi:    
+* I used the `fetch` method to call the API.
+* The API used in the project was:    
 [Swapi Planets API](https://swapi-trybe.herokuapp.com/api/planets/)
 
-> ## Desmontração de Uso
+> ## Usage Demonstration
 
-## Executar localmente
-1) Clonar o repositório
-2) Instalar dependências com `npm install`
-3) Entre na pasta do projeto e execute `npm start`
-4) Pronto, projeto rodando em: `http://localhost:3000/`
+## Run Locally
+1) Clone the repository
+2) Install dependencies with `npm install`
+3) Navigate to the project folder and run `npm start`
+4) Your project is now running at: `http://localhost:3000/`
 
-## Autor
+## Author
 | [<img src="https://avatars.githubusercontent.com/u/92706411?v=4" width=115><br><sub>@luccarendall</sub>](https://github.com/LuccaRendall) |
 | :---: |
-
